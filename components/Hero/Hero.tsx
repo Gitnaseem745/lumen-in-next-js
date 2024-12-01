@@ -1,5 +1,5 @@
 'use client';
-import { section } from '../../data/lumenContent.js';
+import { section } from '../../data/lumenContent';
 
 interface HeroProps {
     handleMouseEnter: (word: string) => void;

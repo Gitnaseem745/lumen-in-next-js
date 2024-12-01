@@ -1,5 +1,5 @@
 'use client';
-import { section } from '../../data/lumenContent.js';
+import { section } from '../../data/lumenContent';
 
 const Footer: React.FC = () => {
   return (

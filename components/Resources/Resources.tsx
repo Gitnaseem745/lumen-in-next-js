@@ -1,5 +1,5 @@
 'use client';
-import {resource, section} from '../../data/lumenContent.js'
+import {resource, section} from '../../data/lumenContent'
 import Card from './Card'
 import Button from '../Button/Button'
 const Resources: React.FC = () => {
