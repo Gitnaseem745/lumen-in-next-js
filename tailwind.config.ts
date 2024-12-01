@@ -13,6 +13,9 @@ export default {
         foreground: "var(--foreground)",
       },
     },
+    fontFamily: {
+        'averta': ['averta cv w10', ''],
+      },
   },
   plugins: [],
 } satisfies Config;

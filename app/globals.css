@@ -2,20 +2,107 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+.stroke{
+    -webkit-text-stroke: 1px #000;
 }
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+@layer base{
+    *{
+        @apply font-averta selection:text-white selection:bg-black m-0 p-0
+    }
+    html,body{
+        @apply w-full h-full
+    }
+    .Circle{
+        @apply size-[24px] rounded-[24px] bg-black absolute top-0 left-0
+    }
+    .home{
+        @apply w-full min-h-screen bg-cover bg-center transition-all duration-300 ease-in-out
+    }
+    .nav{
+        @apply flex items-center justify-between w-full py-[40px] px-[50px]
+    }
+    .logo{
+        @apply font-bold text-3xl pointer-events-none
+    }
+    .navRight{
+        @apply flex items-center gap-9
+    }
+    .navLink{
+        @apply font-semibold text-black tracking-[-1px] text-[1vw] cursor-pointer max-sm:hidden
+    }
+    .heroTitle{
+        @apply font-normal tracking-[-.1vw] text-[1.34vw] max-sm:text-sm
+    }
+    .outLined{
+        @apply text-transparent text-[7vw] font-[900] leading-[1] tracking-[-7px] hover:text-black max-sm:text-5xl max-sm:tracking-[0] transition-all delay-75 ease-in
+    }
+    .sectionDes{
+        @apply text-[1.6vw] font-normal w-[70%] tracking-[-.08vw] max-sm:text-[11px]
+    }
+    .featuredTitle{
+        @apply outLined tracking-tight text-[4vw] pointer-events-none stroke max-sm:text-4xl
+    }
+    .featuredCard{
+        @apply flex justify-between w-full h-screen pt-[5vw] max-sm:flex-col max-sm:justify-center max-sm:gap-8 max-sm:h-fit
+    }
+    .featuredText{
+        @apply w-[45%] h-[inherit] max-sm:w-full max-sm:h-fit
+    }
+    .featuredTextDiv{
+        @apply flex flex-col justify-center w-full h-[inherit] max-sm:h-full
+    }
+    .featuredH1{
+        @apply text-[2.5vw] capitalize my-[1.5vw] tracking-[1] max-sm:text-xl
+    }
+    .featuredImg{
+        @apply flex items-center justify-end w-[45%] h-[inherit] max-sm:w-full max-sm:h-fit max-sm:justify-center
+    }
+    .btnStyle{
+        @apply px-[2.5vw] py-[1.3vw] rounded-[100px] border-[1px] border-solid border-[#e6e6e6] bg-transparent text-[1vw] tracking-[-.7px] font-[500] transition-all delay-0 ease-in hover:border-black hover:bg-black hover:text-white max-sm:text-[11px]
+    }
+    .resourceCardContainer{
+        @apply flex flex-row gap-8 pt-[8vw] pb-[3vw] max-sm:flex-col
+    }
+    .resourceImg{
+        @apply w-[400px] h-[270px] object-cover rounded-xl cursor-pointer
+    }
+    .resourceTag{
+        @apply rounded-[100px] bg-[#f7f7f7] w-fit px-[22px] py-[10px] my-[20px] cursor-pointer max-sm:px-4 max-sm:mt-2 max-sm:mb-0 max-sm:text-xs
+    }
+    .resourceH1{
+        @apply text-[1.4vw] font-normal tracking-[-.5px] max-sm:text-[20px]
+    }
+    .inspireImg{
+        @apply w-full h-[270px] object-cover rounded-xl cursor-pointer
+    }
+    .inspireIcon{
+        @apply mt-5 pr-3 cursor-pointer max-sm:mt-[5px]
+    }
+    .inspireTag{
+        @apply font-semibold mt-[1.3vw] mb-[0.5vw] cursor-pointer
+    }
+    .inspireH1{
+        @apply text-sm font-[500] tracking-[-.5px]
+    }
+    .footer{
+        @apply bg-black text-white p-[15vw] h-screen overflow-hidden
+    }
+    .footerTitle{
+        @apply text-[5vw] w-[50%] font-light leading-[1] pb-[5vw]
+    }
+    .footerBottom{
+        @apply flex justify-between gap-20 pt-[10vw] max-sm:flex-col
+    }
+    .address{
+        @apply flex flex-col gap-5 w-[17.5%] max-sm:w-full
+    }
+    .mail{
+        @apply text-2xl font-semibold cursor-pointer
+    }
+    .dummyAddress{
+        @apply opacity-50 font-semibold text-sm
+    }
+    .socialLinks{
+        @apply flex gap-20 flex-row flex-wrap w-[50%] justify-end max-sm:w-full max-sm:justify-center max-sm:items-center
+    }
 }
