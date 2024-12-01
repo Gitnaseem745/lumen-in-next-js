@@ -1,5 +1,5 @@
 'use client';
-import CardProps from "@/interfaces/CardProps";
+import { CardProps } from '../../interfaces/interfaces';
 
 const Card: React.FC<CardProps> = ({img, tag, name}) => {
   return (

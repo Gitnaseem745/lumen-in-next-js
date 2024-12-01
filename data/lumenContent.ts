@@ -1,33 +1,6 @@
-import { insImgFour, insImgOne, insImgThree, insImgTwo } from "../public/inspire_imgs";
-import { proImgEight, proImgFive, proImgFour, proImgOne, proImgSeven, proImgSix, proImgThree, proImgTwo } from "../public/project_imgs";
-import { resImgOne, resImgThree, resImgTwo } from "../public/resource_imgs";
+import { insImgFour, insImgOne, insImgThree, insImgTwo, proImgEight, proImgFive, proImgFour, proImgOne, proImgSeven, proImgSix, proImgThree, proImgTwo, resImgOne, resImgThree, resImgTwo } from "../public/index";
+import { Section, Project, Resource, Inspiration } from '../interfaces/interfaces';
 
-interface Section {
-    title: string;
-    description: string;
-    address?: string;
-    mail?: string;
-    social?: string[];
-}
-
-interface Project {
-    theme: string;
-    name: string;
-    img: string;
-    tags: string;
-}
-
-interface Resource {
-    img: string;
-    tag: string;
-    name: string;
-}
-
-interface Inspiration {
-    img: string;
-    tag: string;
-    name: string;
-}
 
 export const section: Record<string, Section> = {
     home: {

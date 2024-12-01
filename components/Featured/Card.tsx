@@ -1,5 +1,5 @@
 'use client';
-import CardProps from "@/interfaces/CardProps";
+import { CardProps } from '../../interfaces/interfaces';
 
 interface ExtendedProps extends CardProps {
         theme?: string;
