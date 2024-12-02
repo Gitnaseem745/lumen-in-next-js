@@ -2,8 +2,8 @@
 import Navbar from '../Navbar/Navbar'
 import Hero from '../Hero/Hero'
 import { useState } from 'react';
-import { insImgThree } from '../../public/inspire_imgs/index.js';
-import { resImgThree, resImgTwo } from '../../public/resource_imgs/index.js';
+import { insImgThree } from '../../public/inspire_imgs';
+import { resImgThree, resImgTwo } from '../../public/resource_imgs';
 const HomeSection: React.FC = () => {
     const [bgImage, setBgImage] = useState<string | "">("");
     const handleMouseEnter = (word: string) => {
