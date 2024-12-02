@@ -34,3 +34,17 @@ export interface Inspiration {
     tag: string;
     name: string;
 }
+
+export interface MenuProps {
+    textColor?: boolean;
+    bgColor?: boolean;
+}
+
+export interface MenuButtonProps extends MenuProps {
+    isActive: boolean;
+    toggleMenu: () => void;
+}
+
+export interface PerspectiveTextProps extends MenuProps{
+    label: string;
+}
