@@ -5,12 +5,65 @@
 .stroke{
     -webkit-text-stroke: 1px #000;
 }
+
+#hero-2,
+#hero-3 {
+    background: linear-gradient(135deg, #3c588e 0%, #4267a0 25%, #5865f2 50%, #8c5ade 75%, #b95fcb 100%);
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(100px);
+}
+
+#hero-2 {
+    width: 45vw;
+    height: 30vw;
+    animation-name: anime2;
+    animation-duration: 5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#hero-3 {
+    width: 30vw;
+    height: 30vw;
+    animation-name: anime1;
+    animation-duration: 5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes anime1 {
+    from {
+        transform: translate(3%, -3%);
+    }
+
+    to {
+        transform: translate(-3%, 3%);
+    }
+}
+
+@keyframes anime2 {
+    from {
+        transform: translate(-3%, 3%);
+    }
+
+    to {
+        transform: translate(3%, -3%);
+    }
+}
+
+
 @layer base{
     *{
-        @apply font-averta selection:text-white selection:bg-black m-0 p-0
+        @apply font-averta selection:text-black selection:bg-white m-0 p-0
     }
     html,body{
         @apply w-full h-full
+    }
+    div.single-post {
+        @apply bg-[#000000] min-h-screen text-white flex flex-col justify-center items-center;
     }
     .Circle{
         @apply size-[24px] rounded-[24px] bg-black absolute top-0 left-0
