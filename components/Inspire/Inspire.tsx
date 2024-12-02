@@ -8,7 +8,7 @@ const Inspire: React.FC = () => {
     <section className='py-[10vw] px-[15vw]'>
             <div className='flex gap-10 flex-col'>
             <h1 className='featuredTitle w-[40%] max-sm:w-full'>{section.inspiration.title}</h1>
-            {/* <h1 className='sectionDes'>{section.inspiration.description}</h1> */}
+            <h1 className='sectionDes'>{section.inspiration.description}</h1>
             </div>
             <div className="resourceCardContainer">
             {inspiration.map((inspire, i)=>(

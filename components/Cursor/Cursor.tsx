@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react';
 
 const Cursor: React.FC = ({ isHovering }: any) => {
-  const cursor: String[] = ["Circle", "Circle", "Circle", "Circle", "Circle", "Circle"];
+  const cursor: string[] = ["Circle", "Circle", "Circle", "Circle", "Circle", "Circle"];
   const [coords, setCoords] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
@@ -57,9 +57,11 @@ const Cursor: React.FC = ({ isHovering }: any) => {
 
   return (
     <>
-      {cursor.map((cur, index) => (
+     <div className='max-sm:hidden'>
+     {cursor.map((cur, index) => (
         <div className={cur} key={index}></div>
       ))}
+     </div>
     </>
   );
 };

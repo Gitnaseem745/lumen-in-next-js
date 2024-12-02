@@ -1,4 +1,5 @@
 'use client';
+import Image from 'next/image';
 import { CardProps } from '../../interfaces/interfaces';
 
 interface ExtendedProps extends CardProps {
@@ -16,7 +17,7 @@ const Card: React.FC<ExtendedProps> = ({theme, name, tag, img}) => {
         </div>
         <div className="featuredImg">
             <div className='w-[90%] h-[90%]'>
-            <img src={img} className='w-full h-full object-cover'/>
+            <Image src={img} width={200} height={100} alt={img} className='w-full h-full object-cover'/>
             </div>
         </div>
     </div>
