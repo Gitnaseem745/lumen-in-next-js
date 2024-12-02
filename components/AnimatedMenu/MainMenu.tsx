@@ -1,9 +1,9 @@
 'use client';
 import { useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion';
-import styles from '../../css/MainMenu.module.scss';
 import Menu from '../AnimatedMenu/Menu';
 import MenuButton from '../AnimatedMenu/MenuButton';
+import { MenuProps } from '@/interfaces/interfaces';
 
 const menu = {
     open: {
@@ -22,22 +22,22 @@ const menu = {
     }
 }
 
-export default function MainMenu() {
+export default function MainMenu({ bgColor, textColor } : MenuProps) {
     const [isActive, setIsActive] = useState(false);
 
     return (
-        <div className={styles.header}>
+        <div className={`fixed right-[50px] top-[50px] z-[1000]`}>
             <motion.div
-                className={styles.menu}
+                className={`relative rounded-[25px] w-[480px] h-[650px] ${bgColor ? 'bg-white' : 'bg-black'}`}
                 variants={menu}
                 animate={isActive ? "open" : "closed"}
                 initial="closed"
             >
                 <AnimatePresence>
-                    {isActive && <Menu />}
+                    {isActive && <Menu textColor={textColor} />}
                 </AnimatePresence>
             </motion.div>
-            <MenuButton isActive={isActive} toggleMenu={() => {setIsActive(!isActive)}}/>
+            <MenuButton isActive={isActive} toggleMenu={() => {setIsActive(!isActive)}} textColor={textColor} bgColor={bgColor}/>
         </div>
     )
 }
