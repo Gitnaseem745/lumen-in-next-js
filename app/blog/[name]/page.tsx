@@ -1,3 +1,4 @@
+import MainMenu from "@/components/AnimatedMenu/MainMenu";
 import CommentForm from "@/components/CommentForm/CommentForm";
 import BackgroundLight from "@/components/Effect/BackgroundLight";
 import { insImgOne, insImgTwo } from "@/public";
@@ -12,6 +13,7 @@ export default async function Page({ params } : PageProps) {
     return (
         <>
         <BackgroundLight />
+        <MainMenu bgColor={true} textColor={true} />
         <div className="single-post py-16 px-4 flex flex-col items-center">
             <div className="relative max-w-3xl text-center">
                 <p className="text-neutral-400 font-bold mb-16">BLOGLIST/</p>
