@@ -11,7 +11,6 @@ export default function Home() {
     <Featured />
     <Resources />
     <Inspire />
-    <Footer />
     </>
   );
 }
