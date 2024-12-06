@@ -1,23 +1,25 @@
 'use client';
 import React, { useEffect, useState } from 'react';
 
-const Cursor: React.FC = ({ isHovering }: any) => {
+interface CursorProps {
+  isHovering: boolean;
+}
+
+const Cursor: React.FC<CursorProps> = ({ isHovering }) => {
   const cursor: string[] = ["Circle", "Circle", "Circle", "Circle", "Circle", "Circle"];
-  const [coords, setCoords] = useState({ x: 0, y: 0 });
+  const [coords, setCoords] = useState<{ x: number; y: number }>({ x: 0, y: 0 });
 
   useEffect(() => {
-    const circles: NodeListOf<Element> = document.querySelectorAll('.Circle');
+    const circles = document.querySelectorAll<HTMLDivElement>('.Circle');
 
-    circles.forEach((circle: any) => {
-      circle.x = 0;
-      circle.y = 0;
+    circles.forEach((circle) => {
       circle.style.backgroundColor = '#000';
       circle.style.position = 'fixed';
-      circle.style.zIndex = 1000;
+      circle.style.zIndex = '1000';
       circle.style.pointerEvents = 'none';
     });
 
-    const handleMouseMove = (e: any) => {
+    const handleMouseMove = (e: MouseEvent) => {
       setCoords({ x: e.clientX, y: e.clientY });
     };
 
@@ -27,7 +29,7 @@ const Cursor: React.FC = ({ isHovering }: any) => {
       let x = coords.x;
       let y = coords.y;
 
-      circles.forEach((circle: any, index: number) => {
+      circles.forEach((circle, index) => {
         circle.style.backgroundColor = isHovering ? '#fff' : '#000';
         circle.style.transform = isHovering
           ? `scale(${1.5 * (circles.length - index) / circles.length})`
@@ -35,14 +37,9 @@ const Cursor: React.FC = ({ isHovering }: any) => {
         circle.style.left = `${x - 12}px`;
         circle.style.top = `${y - 12}px`;
 
-        circle.style.transform = `scale(${(circles.length - index) / circles.length})`;
-
-        circle.x = x;
-        circle.y = y;
-
-        const nextCircle: any = circles[index + 1] || circles[0];
-        x += (nextCircle.x - x) * 0.3;
-        y += (nextCircle.y - y) * 0.3;
+        const nextCircle = circles[index + 1] || circles[0];
+        x += (nextCircle.getBoundingClientRect().left - x) * 0.3;
+        y += (nextCircle.getBoundingClientRect().top - y) * 0.3;
       });
 
       requestAnimationFrame(animateCircles);
@@ -53,15 +50,15 @@ const Cursor: React.FC = ({ isHovering }: any) => {
     return () => {
       window.removeEventListener('mousemove', handleMouseMove);
     };
-  }, [coords]);
+  }, [coords, isHovering]);
 
   return (
     <>
-     <div className='max-sm:hidden'>
-     {cursor.map((cur, index) => (
-        <div className={cur} key={index}></div>
-      ))}
-     </div>
+      <div className='max-sm:hidden'>
+        {cursor.map((cur, index) => (
+          <div className={cur} key={index}></div>
+        ))}
+      </div>
     </>
   );
 };

@@ -3,7 +3,7 @@ import Image from 'next/image';
 import { CardProps } from '../../interfaces/interfaces';
 
 interface ExtendedProps extends CardProps {
-        theme?: string;
+    theme?: string;
 }
 const Card: React.FC<ExtendedProps> = ({theme, name, tag, img}) => {
   return (

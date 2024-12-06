@@ -13,14 +13,13 @@ export default function Menu({ textColor } : MenuProps) {
                 return (
                     <div key={`b_${i}`} className="perspective-[120px] [perspective-origin:bottom]">
                         <motion.div
-                          href={href}
                           custom={i}
                           variants={perspective}
                           initial="initial"
                           animate="enter"
                           exit="exit"
                         >
-                            <a className={`no-underline ${textColor ? 'text-black' : 'text-white'} text-[46px] transition-all duration-200 ease-in-out hover:font-semibold`}>
+                            <a className={`no-underline ${textColor ? 'text-black' : 'text-white'} text-[46px] max-sm:text-[40px] transition-all duration-200 ease-in-out hover:font-semibold`}>
                                 {title}
                             </a>
                         </motion.div>

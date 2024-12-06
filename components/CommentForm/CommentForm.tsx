@@ -1,5 +1,4 @@
 'use client';
-
 const CommentForm: React.FC = () => {
   return (
     <div className="w-full flex justify-center items-center py-10">

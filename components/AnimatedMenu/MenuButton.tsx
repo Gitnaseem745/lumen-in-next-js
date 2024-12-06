@@ -4,14 +4,14 @@ import { motion } from 'framer-motion';
 
 export default function MenuButton({ isActive, toggleMenu, textColor, bgColor }: MenuButtonProps) {
   return (
-    <div className="absolute top-0 right-0 w-[100px] h-[40px] cursor-pointer rounded-[25px] overflow-hidden">
+    <div className={`absolute top-0 right-0 w-[100px] max-sm:w-[80px]  h-[40px] ${bgColor ? 'border-[1px] border-white': ''} cursor-pointer rounded-[25px] overflow-hidden`}>
         <motion.div
             className="relative w-full h-full"
             animate={{ top: isActive ? "-100%" : "0%" }}
             transition={{ duration: 0.5, type: "tween", ease: [0.76, 0, 0.24, 1] }}
         >
             <div
-                className={`w-full h-full ${bgColor ? 'bg-white' : 'bg-black'} flex justify-center items-center`}
+                className={`w-full h-full ${bgColor ? 'bg-black' : 'bg-black'} flex justify-center items-center`}
                 onClick={() => { toggleMenu() }}
             >
                 <PerspectiveText label="Menu" textColor={true} />

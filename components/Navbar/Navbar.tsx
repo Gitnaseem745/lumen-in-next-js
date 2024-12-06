@@ -2,7 +2,7 @@
 
 import MainMenu from "../AnimatedMenu/MainMenu";
 
-const menu: String[] = ["our showcase", "menu",];
+// const menu: String[] = ["our showcase", "menu",];
 const Navbar: React.FC = () => {
   return (
     <nav className='nav'>
