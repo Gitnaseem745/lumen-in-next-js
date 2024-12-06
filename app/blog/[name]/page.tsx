@@ -6,10 +6,10 @@ import Link from "next/link";
 import { FiArrowLeft } from "react-icons/fi";
 
 interface PageProps {
-    params: { name: string };
+    params: Promise<{ name: string }>;
 }
 export default function Page({ params } : PageProps) {
-    const { name } = params;
+    const { name } = params.finally;
     return (
         <>
         <BackgroundLight />
